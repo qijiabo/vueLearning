@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{message}}
+</div>
+=======================
+
+<div id="app-2">
+    <span v-bind:title="message">
+        hover your mouse over me for a few seconds to see my dynamically bound title!
+    </span>
+
+</div>
+=======================
+
+<div id="app3">
+    <p v-if="seen">now you see me</p>
+</div>
+=======================
+
+<div id="app4">
+    <ul>
+        <li v-for="todo in todos">
+            {{todo.text}}
+        </li>
+    </ul>
+</div>
+=======================
+<div id="app5">
+    <p>{{message}}</p>
+    <button v-on:click="reverseMsg"></button>
+</div>
+
+<div>
+
+</div>
+
+
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            message:'hello vue'
+        }
+    });
+
+    var app2=new Vue({
+        el:'#app-2',
+        data:{
+            message:'You loaded this page on '+ new Date()
+        }
+    });
+
+    var app3=new Vue({
+        el:'#app3',
+        data:{
+            seen:true
+        }
+    });
+
+    var app4=new Vue({
+        el:'#app4',
+        data:{
+            todos:[
+                {text:'learn '},
+                {text:'play '},
+                {text:'fuck '}
+            ]
+        }
+    });
+
+    var app5=new Vue({
+        el:'#app5',
+        data:{
+            message:'Hello Vue js'
+        },
+        methods:{
+            reverseMsg:function(){
+                this.message=this.message.split('').reverse().join('');
+            }
+        }
+
+    });
+
+</script>
+</html>
