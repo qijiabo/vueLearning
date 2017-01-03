@@ -35,11 +35,19 @@
     <p>{{message}}</p>
     <button v-on:click="reverseMsg"></button>
 </div>
-
-<div>
-
+=======================
+<div id="app6">
+    {{message}}
+    <br/>
+<input v-model="message"/>
 </div>
 
+=======================
+<div id="app7">
+    <ol>
+        <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+    </ol>
+</div>
 
 </body>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -89,5 +97,29 @@
 
     });
 
+    var app6=new Vue({
+        el:'#app6',
+        data:{
+            message:'hello Vue'
+        }
+    });
+
+
+    //
+    Vue.component('todo-item',{
+        props:['todo'],
+        template:'<li>{{todo.text}}</li>'
+    })
+
+    var app7=new Vue({
+        el:'#app7',
+        data:{
+            groceryList:[
+                {text:'V'},
+                {text:'C'},
+                {text:'Whatever'}
+            ]
+        }
+    });
 </script>
 </html>
