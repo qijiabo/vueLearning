@@ -49,6 +49,13 @@
     </ol>
 </div>
 
+=======================
+<div id="app8">
+    <input v-model="msg"/>
+    {{ msg.charAt(0).toUpperCase() + msg.slice(1)}}
+</div>
+
+
 </body>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script>
@@ -121,5 +128,15 @@
             ]
         }
     });
+
+    var app8=new Vue({
+        el:'#app8',
+        data:{
+            msg:'test'
+        }
+
+    });
+
+
 </script>
 </html>
