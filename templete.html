@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+v-once
+=======================
+<div id="div1">
+
+<input type="text" v-model="msg" >
+
+<span>Message:{{msg}}</span>
+
+    <br>
+<span v-once> once change:{{msg}}</span>
+
+</div>
+=======================
+
+
+<div id="div2">
+{{now}}
+</div>
+
+
+
+</body>
+
+<script src="js/vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#div1',
+        data:{
+            msg : 'hello'
+        }
+    });
+
+
+    var vm2=new Vue({
+        el:'#div2',
+        computed:{
+            now:function () {
+                return Date.now();
+            }
+        }
+    });
+</script>
+</html>

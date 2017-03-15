@@ -57,7 +57,7 @@
 
 
 </body>
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="js/vue.js"></script>
 <script>
     var app=new Vue({
         el:'#app',
@@ -112,7 +112,7 @@
     });
 
 
-    //
+    //组件
     Vue.component('todo-item',{
         props:['todo'],
         template:'<li>{{todo.text}}</li>'
@@ -128,6 +128,8 @@
             ]
         }
     });
+
+
 
     var app8=new Vue({
         el:'#app8',
